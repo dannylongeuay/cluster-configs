@@ -1,0 +1,41 @@
+name: Terraform CI
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/terraform-ci.yaml"
+      - "terraform/**"
+
+jobs:
+  fmt-validate-plan:
+    strategy:
+      matrix:
+        dir: ["terraform/ndsquared-prod-sf03"]
+    runs-on: ubuntu-latest
+    name: Format/Validate/Plan terraform configuration
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      SPACES_ACCESS_KEY_ID: ${{ secrets.SPACES_ACCESS_KEY_ID }}
+      SPACES_SECRET_ACCESS_KEY: ${{ secrets.SPACES_SECRET_ACCESS_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: terraform validate
+        uses: dflook/terraform-validate@v1
+        with:
+          path: ${{matrix.dir}}
+
+      - name: terraform fmt
+        uses: dflook/terraform-fmt-check@v1
+        with:
+          path: ${{matrix.dir}}
+
+      - name: terraform plan
+        uses: dflook/terraform-plan@v1
+        with:
+          path: ${{matrix.dir}}
+
