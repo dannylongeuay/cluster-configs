@@ -15,7 +15,7 @@ asdf-bootstrap: ## Install all tools through asdf-vm
 
 .PHONY: k8s-bootstrap
 k8s-bootstrap: ## Create a Kubernetes cluster for local development
-	k3d cluster create $(LOCAL_PROJECT_NAME) -a 1 -p "8000:80@loadbalancer" || echo "Cluster already exists"
+	k3d cluster create $(LOCAL_PROJECT_NAME) -a 1 -p "8000:80@loadbalancer" --k3s-arg "--no-deploy=metrics-server@server:*" || echo "Cluster already exists"
 	sleep 3 && kubectl config use-context k3d-$(LOCAL_PROJECT_NAME)
 
 
