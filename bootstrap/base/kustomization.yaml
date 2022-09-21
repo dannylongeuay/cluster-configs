@@ -5,5 +5,4 @@ resources:
   - helm_sources.yaml
   - git_sources.yaml
   - crds.yaml
-  - hr_external_secrets.yaml
-  - hr_metrics_server.yaml
+  - core.yaml
