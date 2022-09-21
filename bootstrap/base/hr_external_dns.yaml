@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: core
+spec:
+  interval: 10m0s
+  chart:
+    spec:
+      version: 6.9.0
+      chart: external-dns
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  values:
+    provider: digitalocean
+    digitalocean:
+      apiToken: notarealtoken
+    policy: sync
