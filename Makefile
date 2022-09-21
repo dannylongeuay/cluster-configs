@@ -29,7 +29,7 @@ flux-bootstrap: ## Install flux and bootstrap local overlay
 		--source=GitRepository/cluster-management \
 		--path="./bootstrap/overlays/local" \
 		--prune=true \
-		--interval=5m
+		--interval=30s
 	
 .PHONY: bootstrap
 bootstrap: asdf-bootstrap k8s-bootstrap flux-bootstrap ## Perform all bootstrapping required for local development
