@@ -37,6 +37,12 @@ resource "digitalocean_certificate" "ndsq_content_cert" {
   domains = ["static.ndsquared.net"]
 }
 
+resource "digitalocean_certificate" "ndsq_domain_cert" {
+  name    = "ndsq-domain-cert"
+  type    = "lets_encrypt"
+  domains = ["ndsquared.net"]
+}
+
 resource "digitalocean_cdn" "ndsq_content_cdn" {
   origin           = digitalocean_spaces_bucket.ndsq_content.bucket_domain_name
   custom_domain    = "static.ndsquared.net"
