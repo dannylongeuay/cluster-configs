@@ -6,6 +6,6 @@ resources:
   - git_sources.yaml
   - crds.yaml
   - hr_ingress_nginx.yaml
-  - hr_external_dns.yaml
   - hr_external_secrets.yaml
   - hr_metrics_server.yaml
+  - external_dns.yaml
