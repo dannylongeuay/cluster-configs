@@ -21,5 +21,5 @@ spec:
           external-dns.alpha.kubernetes.io/hostname: ndsquared.net
           service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
           service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
-          service.beta.kubernetes.io/do-loadbalancer-certificate-id: "changeme"
+          service.beta.kubernetes.io/do-loadbalancer-certificate-id: "3c7379c8-15ed-44f5-8b0a-c3b0834fa627"
           service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
