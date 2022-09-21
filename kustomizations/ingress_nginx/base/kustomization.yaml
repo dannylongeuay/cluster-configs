@@ -1,5 +1,4 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - secret_stores.yaml
-  - external_secrets.yaml
+  - hr_ingress_nginx.yaml
