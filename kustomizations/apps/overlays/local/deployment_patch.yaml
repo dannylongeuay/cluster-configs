@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyapi
+  namespace: apps
+spec:
+  template:
+    spec:
+      containers:
+        - name: pyapi
+          image: "dannylongeuay/ndsq-api:latest"
