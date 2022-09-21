@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - namespaces.yaml
   - helm_sources.yaml
+  - git_sources.yaml
+  - crds.yaml
   - hr_ingress_nginx.yaml
   - hr_external_dns.yaml
   - hr_external_secrets.yaml
