@@ -17,5 +17,5 @@ spec:
   values:
     apiService:
       create: true
-    extraArgs:
-      kubelet-preferred-address-types: InternalIP
+    # extraArgs:
+    #   kubelet-preferred-address-types: InternalIP
