@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: pyapi
-          image: "dannylongeuay/ndsq-api:latest"
+          image: "dannylongeuay/ndsq-pyapi:1.0.5"
