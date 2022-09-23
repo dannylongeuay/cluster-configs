@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pyapi
+  labels:
+    app.kubernetes.io/name: pyapi
+    app.kubernetes.io/instance: pyapi
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "pyapi.ndsquared.net"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pyapi
+                port:
+                  number: 5000
