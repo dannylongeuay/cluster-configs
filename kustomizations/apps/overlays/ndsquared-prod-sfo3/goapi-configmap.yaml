@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: goapi
+  labels:
+    app.kubernetes.io/name: goapi
+    app.kubernetes.io/instance: goapi
+data:
+  GOAPI_HOST: goapi.ndsquared.net
+  GIN_MODE: release

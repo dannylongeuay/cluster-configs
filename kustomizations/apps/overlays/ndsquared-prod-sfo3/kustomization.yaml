@@ -5,3 +5,6 @@ resources:
   - ../../base
   - github.com/dannylongeuay/ndsquared-pyapi/deploy/kustomization
   - pyapi-ingress.yaml
+  - github.com/dannylongeuay/ndsquared-goapi/deploy/kustomization
+  - goapi-ingress.yaml
+  - goapi-configmap.yaml

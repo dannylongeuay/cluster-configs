@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goapi
+  labels:
+    app.kubernetes.io/name: goapi
+    app.kubernetes.io/instance: goapi
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "goapi.ndsquared.net"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: goapi
+                port:
+                  number: 5000
