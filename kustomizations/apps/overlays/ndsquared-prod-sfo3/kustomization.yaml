@@ -8,3 +8,5 @@ resources:
   - github.com/dannylongeuay/ndsquared-goapi/deploy/kustomization
   - goapi-ingress.yaml
   - goapi-configmap.yaml
+  - github.com/dannylongeuay/ndsquared-wedding/deploy/kustomization
+  - wedding-ingress.yaml

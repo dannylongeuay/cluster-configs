@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wedding
+  labels:
+    app.kubernetes.io/name: wedding
+    app.kubernetes.io/instance: wedding
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: "wedding.ndsquared.net"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wedding
+                port:
+                  number: 5000
