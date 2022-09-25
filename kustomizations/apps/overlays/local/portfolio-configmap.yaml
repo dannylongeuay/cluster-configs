@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio
+  labels:
+    app.kubernetes.io/name: portfolio
+    app.kubernetes.io/instance: portfolio
+data:
+  PYAPI_BASE_URL: http://pyapi.localhost:8000
+  GOAPI_BASE_URL: http://goapi.localhost:8000
