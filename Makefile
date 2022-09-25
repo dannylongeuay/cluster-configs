@@ -41,5 +41,11 @@ create: bootstrap ## Create local development environment
 .PHONY: clean
 clean: ## Destroy local development environment
 	k3d cluster delete $(LOCAL_PROJECT_NAME) || echo "No cluster found"
+	
+.PHONY: create-gitlab-secret
+create-gitlab-secret: ## Create a gitlab secret to be used with the external secrets store
+	cp gitlab-secret.example.yaml gitlab-secret.yaml
 
-
+.PHONY: apply-gitlab-secret
+apply-gitlab-secret: ## Apply a gitlab secret to be used with the external secrets store
+	kubectl apply -f gitlab-secret.yaml
