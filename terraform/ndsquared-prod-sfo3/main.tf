@@ -9,7 +9,7 @@ resource "digitalocean_record" "www" {
   value  = "@"
 }
 
-resource "digitalocean_kubernetes_cluster" "cluster" {
+resource "digitalocean_kubernetes_cluster" "ndsq_cluster" {
   name         = "ndsquared-prod-sfo3"
   region       = "sfo3"
   auto_upgrade = true
