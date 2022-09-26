@@ -19,3 +19,13 @@ spec:
                 name: portfolio
                 port:
                   number: 5000
+    - host: "www.ndsquared.net"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portfolio
+                port:
+                  number: 5000
