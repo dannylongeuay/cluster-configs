@@ -41,6 +41,18 @@ create: bootstrap ## Create local development environment
 .PHONY: clean
 clean: ## Destroy local development environment
 	k3d cluster delete $(LOCAL_PROJECT_NAME) || echo "No cluster found"
+
+.PHONY: flux-bootstrap-ndsq
+flux-bootstrap-ndsq: ## Install flux and bootstrap ndsquared-prod-sfo3 overlay
+	flux install
+	flux create source git cluster-management \
+	    --url=https://github.com/dannylongeuay/cluster-management \
+	    --branch=main
+	flux create kustomization bootstrap \
+		--source=GitRepository/cluster-management \
+		--path="./bootstrap/overlays/ndsquared-prod-sfo3" \
+		--prune=true \
+		--interval=30s
 	
 .PHONY: create-gitlab-secret
 create-gitlab-secret: ## Create a gitlab secret to be used with the external secrets store
