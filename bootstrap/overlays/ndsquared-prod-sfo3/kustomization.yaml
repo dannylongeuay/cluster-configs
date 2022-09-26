@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   - ../../base
   - ingress_nginx.yaml
-  # - external_dns.yaml
+  - external_dns.yaml
   - external_secrets.yaml
   - apps.yaml
