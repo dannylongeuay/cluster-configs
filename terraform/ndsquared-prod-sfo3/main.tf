@@ -40,7 +40,7 @@ resource "digitalocean_certificate" "ndsq_content_cert" {
 resource "digitalocean_certificate" "ndsq_domain_cert" {
   name    = "ndsq-domain-cert"
   type    = "lets_encrypt"
-  domains = ["ndsquared.net"]
+  domains = ["ndsquared.net", "*.ndsquared.net"]
 }
 
 resource "digitalocean_cdn" "ndsq_content_cdn" {
