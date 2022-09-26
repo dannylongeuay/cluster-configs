@@ -10,7 +10,7 @@ jobs:
   fmt-validate-plan:
     strategy:
       matrix:
-        dir: ["terraform/ndsquared-prod-sf03"]
+        dir: ["terraform/ndsquared-prod-sfo3"]
     runs-on: ubuntu-latest
     name: Format/Validate/Plan terraform configuration
     env:
