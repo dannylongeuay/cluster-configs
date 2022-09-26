@@ -13,7 +13,7 @@ jobs:
     name: Apply terraform plan
     strategy:
       matrix:
-        dir: ["terraform/ndsquared-prod-sf03"]
+        dir: ["terraform/ndsquared-prod-sfo3"]
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}

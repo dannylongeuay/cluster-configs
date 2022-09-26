@@ -10,11 +10,11 @@ resource "digitalocean_record" "www" {
 }
 
 resource "digitalocean_kubernetes_cluster" "cluster" {
-  name         = "ndsquared-prod-sf03"
+  name         = "ndsquared-prod-sfo3"
   region       = "sfo3"
   auto_upgrade = true
   # Retrieve the latest version slug from `doctl kubernetes options versions`
-  version = "1.22.13-do.0"
+  version = "1.24.4-do.0"
 
   node_pool {
     name       = "default"
