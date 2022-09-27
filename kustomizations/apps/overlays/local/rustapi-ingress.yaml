@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rustapi
+  labels:
+    app.kubernetes.io/name: rustapi
+    app.kubernetes.io/instance: rustapi
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - host: "rustapi.localhost"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: rustapi
+                port:
+                  number: 5000
