@@ -13,3 +13,5 @@ resources:
   - github.com/dannylongeuay/ndsquared-portfolio/deploy/kustomization
   - portfolio-ingress.yaml
   - portfolio-configmap.yaml
+  - github.com/dannylongeuay/ndsquared-rustapi/deploy/kustomization
+  - rustapi-ingress.yaml
