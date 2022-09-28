@@ -18,7 +18,7 @@ resource "digitalocean_kubernetes_cluster" "ndsq_cluster" {
 
   node_pool {
     name       = "default"
-    size       = "s-1vcpu-2gb"
+    size       = "s-2vcpu-2gb"
     node_count = 3
   }
 
