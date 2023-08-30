@@ -8,7 +8,7 @@ resources:
   - github.com/dannylongeuay/ndsquared-goapi/deploy/kustomization
   - goapi-ingress.yaml
   - goapi-configmap.yaml
-  - github.com/dannylongeuay/ndsquared-wedding/deploy/kustomization
+  - github.com/dannylongeuay/ndsq-wedding/deploy/kustomization
   - wedding-ingress.yaml
   - github.com/dannylongeuay/ndsquared-portfolio/deploy/kustomization
   - portfolio-ingress.yaml
